@@ -11,8 +11,10 @@ COPY junit-* ./
 
 USER ojdk
 
-RUN javac -cp "junit-4.10.jar:." *.java *.java
+RUN javac -cp "junit-4.10.jar:." *.java
+
+RUN java -cp "junit-4.10.jar:." org.junit.runner.JUnitCore TestAdd TestSub 
 
 COPY --chown=ojdk:ojdk . .
 
-CMD ["java", "-cp", "junit-4.10.jar:.", "org.junit.runner.JUnitCore", "TestAdd", "TestSub"]
+CMD ["java", "-cp", "junit-4.10.jar:.", "Driver"]
