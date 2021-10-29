@@ -3,7 +3,7 @@ version: "3"
 services:
   calculator:
     build:
-      context: .
-      dockerfile: Dockerfile
+      context: ./Calculator/
+      dockerfile: ./Calculator/Dockerfile
     image: calculator_tests
     container_name: calculator_tests
